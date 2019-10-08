@@ -1,0 +1,226 @@
+*{
+    margin:0;
+    padding:0;
+    outline: none;
+    color: #333333;
+    font-size: 16px;
+    box-sizing: border-box;
+    font-family: "PingFang SC","Microsoft YaHei","Hiragino Sans GB W3",Helvetica,"Heiti SC","Droid Sans",Droidsansfallback,sans-serif;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+    -webkit-tap-highlight-color:transparent;
+}
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+    color:#bbb;
+}
+
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+    color:#bbb;
+}
+a{
+    color:#333;
+}
+a:link{
+    text-decoration: none !important;
+}
+a:visited{
+    text-decoration: none !important;;
+}
+a:hover{
+    text-decoration: none !important;;
+}
+a:active{
+    text-decoration: none !important;;
+}
+ul,li{
+    list-style: none;
+    text-align: left;
+}
+input:-ms-input-placeholder{
+    color:#bbb;
+}
+
+input::-webkit-input-placeholder{
+    color:#bbb;
+}
+a,span,p,div{
+    text-decoration: none;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+}
+.cf{
+    clear:both;
+}
+.limit-text{
+    overflow:hidden;
+    text-overflow:ellipsis;
+    white-space:nowrap;
+}
+.common-width{
+    width:1200px;
+    margin:0 auto;
+}
+
+.now-time{
+    display:inline-block;
+    height:45px;
+    line-height:45px;
+    position:absolute;
+    left:0;
+}
+.nav-item{
+    display:inline-block;
+    padding:0 20px;
+    height:45px;
+    line-height: 45px;
+    font-weight: 700;
+    cursor:pointer;
+}
+.nav-item:hover{
+    background:#f5f5f5;
+}
+.main-header{
+    height:78px;
+    padding-top:10px;
+}
+.main-header .main-header-phone{
+    float:right;
+    line-height:58px;
+}
+.main-header .main-header-phone .phone-icon{
+    display:inline-block;
+    width:48px;
+    height:58px;
+    background:url(../image/icon_phone.png) no-repeat center;
+    float:left;
+}
+.main-header .phone-num{
+    font-weight:700;
+    font-size:36px;
+    float:left;
+}
+.main-header .main-header-logo{
+    width:198px;
+    height:58px;
+    float:left;
+}
+.content-head{
+    border-bottom:1px solid #ccc;
+    margin-bottom: 12px;
+}
+.content-head.no-bottom{
+    border:none;
+}
+.head-title-last{
+    display:inline-block;
+    height:30px;
+    line-height:30px;
+    padding:0 5px;
+    font-weight: 700;
+    position:relative;
+    top:1px;
+}
+.head-title-last.active{
+    border-bottom:2px solid #16aa48;
+    color:#16aa48;
+}
+.head-title{
+    display:inline-block;
+    height:30px;
+    line-height:30px;
+    padding:0 5px;
+    border-bottom:2px solid #16aa48;
+    color:#16aa48;
+    font-weight: 700;
+    position:relative;
+    top:1px;
+}
+.head-title-item{
+    display:inline-block;
+    height:30px;
+    line-height:30px;
+    font-weight: 700;
+    position:relative;
+    top:1px;
+    width: 103.3px;
+    text-align:center;
+    cursor: pointer;
+    background:#f8f8f8;
+}
+.head-title-item.active{
+    color:#fff;
+    background:#16aa48;
+}
+.hidden{
+    display:none;
+}
+.head-more{
+    height:30px;
+    line-height:30px;
+    float:right;
+    color:#666666;
+    position:relative;
+    top:1px;
+}
+.content-wrap{
+    float:left;
+}
+.footer-left{
+    width: 344px;
+    height: 85px;
+    margin-top: 37.5px;
+    background: url(../image/logo.png) no-repeat center;
+}
+.footer-right{
+    margin-left: 100px;
+}
+.main-footer{
+    padding:30px 0;
+}
+#footer{
+    background:#16aa48;
+}
+#footer .content-list{
+    border-bottom:1px dashed #666;
+    line-height:50px;
+    height:50px;
+    cursor:pointer;
+}
+.footer-text{
+    background-color:#012e58;
+    color:#d0d0d0;
+    text-align:center;
+    font-size:12px;
+    line-height:60px;
+}
+.media-img{
+    width:160px;
+    height:160px;
+    float: left;
+    margin-left: 20px;
+}
+.main-nav{
+    position:relative;
+}
+#footer .default-area {
+    float: left;
+    margin-left: 20px;
+    width:74px;
+    margin-top:43px;
+}
+#footer .default-area .default-img{
+    height:74px;
+}
+#footer .default-area .weixin-img{
+    background:url(../image/weixin.png) no-repeat center;
+    background-size:74px;
+}
+#footer .default-area .weibo-img{
+    background:url(../image/weibo.png) no-repeat center;
+    background-size:74px;
+}
+#footer .default-area .default-name{
+    margin-top:8px;
+    font-size:12px;
+    text-align: center;
+}

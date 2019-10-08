@@ -1,0 +1,69 @@
+{include file="public:head" title="detail"
+css='<link href="__StaticStyle__/css/sendmessage.css" rel="stylesheet"><link href="__StaticStyle__/layui/css/layui.css" rel="stylesheet">'
+js='<script type="text/javascript" src="__StaticStyle__/layui/layui.js"></script>'
+}
+<body>
+    {include file="public:nav"}
+    <div class="nav-content common-width">
+        <a href="{:url('index/index')}">首页</a> > <a href="{:url('index/articlelist',['mark'=>$mark.mark,'type'=>'list'])}">{$mark.title}</a>
+    </div>
+    <div class="main-content common-width">
+        <div class="content-list-wrap">
+            <div class="list-item">
+                <span class="name-item">写信人名</span>
+                <input type="text" class="input-item name"  placeholder="写信人名">
+            </div>
+            <div class="list-item">
+                <span class="name-item">手机号码</span>
+                <input type="text" class="input-item phone" placeholder="手机号码">
+            </div>
+            <div class="list-item">
+                <span class="name-item">电子邮箱</span>
+                <input type="text" class="input-item email" placeholder="电子邮箱">
+            </div>
+            <div class="list-item">
+                <span class="name-item">信件内容</span>
+                <textarea name="" id="" cols="30" rows="10" class="input-item text-area message" placeholder="信件内容"></textarea>
+            </div>
+            <div class="submit-btn">提交信件</div>
+        </div>
+    </div>
+    {include file="public:footer"}
+</body>
+<script>
+    layui.use(['layer','jquery'], function(){
+        var layer = layui.layer;
+        var $ = layui.jquery;
+        $('.submit-btn').click(function(){
+            console.log(1111);
+            var name=$(".name").val().trim();
+            var phone=$(".phone").val().trim();
+            var email=$(".email").val().trim();
+            var message=$(".message").val().trim();
+            if(name == "")  return layer.msg("写信人名不能为空");
+            if(phone == "")  return layer.msg("手机号码不能为空");
+            if(email == "")  return layer.msg("电子邮箱不能为空");
+            if(message == "")  return layer.msg("信件内容不能为空");
+            $.ajax({
+                url:"{:url('index/sendmessage')}",
+                data:{message:message,phone:phone,email:email,name:name},
+                type:'post',
+                success:function(res) {
+                    if(res.code == 1) {
+                        layer.msg(res.msg);
+                        setTimeout(function() {
+                            window.location.href="{:url('index/articlelist',['mark'=>'Message','type'=>'list'])}";
+                        }, 1000);
+                    }else{
+                        layer.msg(res.msg);
+                    }
+                },
+                error : function(){
+                    layer.closeAll();
+                    layer.msg('网络异常！');
+                }
+            })
+        })
+    })
+</script>
+</html>

@@ -1,0 +1,44 @@
+{include file="public:head"
+css='<link href="__StaticStyle__/css/bootstrap.min.css" rel="stylesheet"><link href="__StaticStyle__/css/list.css" rel="stylesheet">'
+js=''
+}
+<body>
+    {include file="public:nav"}
+    <div class="nav-content common-width">
+        <a href="{:url('index/index')}">首页</a> > <a href="{:url('index/articlelist',['mark'=>$mark.mark,'type'=>$type])}">{$mark.title}</a>{if isset($cate)} > <a href="{:url('index/articlelist',['mark'=>$mark.mark,'type'=>$type,'cate_id'=>$cate.id])}">{$cate.name}</a>{/if}
+    </div>
+    <div class="main-content common-width">
+        {if count($cateList) > 0}
+        <div class="list-cate">
+            <div class="list-left">
+                <div class="left-list-title">{$mark.title}</div>
+                {foreach name="cateList" item="v" key="key"}
+                <a class="left-list {if !isset($cate.id) && $key == 0}active{elseif isset($cate.id) && $v.id == $cate.id }active{/if}" href="{:url('index/articlelist',['mark'=>$mark.mark,'type'=>$type,'cate_id'=>$v.id])}">{$v.name}</a>
+                {/foreach}
+            </div>
+        {/if}
+        <div class="content-wrap content-item fir no-padding content-list-wrap">
+            <div class="content-head">
+                <span class="head-title">{if isset($cate)}{$cate.name}{else}{$mark.title}{/if}</span>
+                {if $mark.mark == 'Message'}<a href="{:url('index/sendmessage')}" class="send-message">写信件</a>{/if}
+            </div>
+            <ul class="content-area">
+                {foreach $list as $v}
+                <li class="content-list limit-text" {if $mark.mark == 'Xiazai'}onclick="javascript:window.location.href='{:url("index/downfile",['id'=>$v.id])}';"{elseif $mark.mark == 'Link'}onclick="javascript:window.location.href='{$v.linkurl}';"{else}onclick="javascript:window.location.href='{:url("index/articledetail",['mark'=>$mark.mark,'id'=>$v.id,'type'=>$type])}';"{/if}> · {$v.title} {if $mark.mark=='Link'}{elseif $mark.mark=='Message'}<span class="{$v.isstate==0?'un-re':'ed-re'}">[{$v.isstate==0?'未回复':'已回复'}]</span><span class="list-time">{$v.sendtime|date="Y-m-d",###}</span>{else}<span class="list-time">{$v.sendtime|getYearDay}</span>{/if}</li>
+                {/foreach}
+            </ul>
+            <div class="page">
+
+            {$page}
+            </div>
+        </div>
+        {if count($cateList) > 0}
+        </div>
+        {/if}
+    </div>
+    {include file="public:footer"}
+</body>
+<script>
+
+</script>
+</html>

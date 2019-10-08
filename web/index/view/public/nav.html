@@ -1,0 +1,42 @@
+<div class="main-header common-width">
+    <div class="main-header-logo" style="background:url(__ImagePath__{$info.logo_url}) no-repeat center;"></div>
+    <div class="main-header-phone" >
+        <span class="phone-icon"></span>
+        <span class="phone-num">{$info.phone}</span>
+    </div>
+</div>
+<div class="main-nav common-width">
+    <div class="index-nav">
+        <div class="index-nav-frame clearfix">
+            <div class="nav-line">
+
+            </div>
+            <div class="nav-small" tabindex="-1">
+                <div class="nav-small-focus" tabindex="-1">
+
+                </div>
+            </div>
+            <a class="index-nav-frame-line {if $nav == 'index'}active{/if}" tabindex="-1" href="{:url('index/index')}">
+                首页
+            </a>
+            {foreach $navList as $item}
+            {if count($item.sub) == 0}
+            <a class="index-nav-frame-line {if $nav == $item.mark}active{/if}" tabindex="-1" href="{:url('index/articlelist',['mark'=>$item.mark,'type'=>'nav'])}">
+                {$item.title}
+            </a>
+            {else}
+            <div class="index-nav-frame-line {if $nav == $item.mark}active{/if}" tabindex="-1">
+                <a style="width:100%;height:100%;display:block;" href="{:url('index/articlelist',['mark'=>$item.mark,'type'=>'nav'])}">{$item.title}</a>
+                <div class="index-nav-frame-line-center">
+                    {foreach $item.sub as $v}
+                    <a class="index-nav-frame-line-li" href="{:url('index/articlelist',['cate_id'=>$v.id,'mark'=>$item.mark,'type'=>'nav'])}">
+                        {$v.name}
+                    </a>
+                    {/foreach}
+                </div>
+            </div>
+            {/if}
+            {/foreach}
+        </div>
+    </div>
+</div>

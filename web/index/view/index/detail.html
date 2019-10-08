@@ -1,0 +1,34 @@
+{include file="public:head" title="detail"
+css='<link href="__StaticStyle__/css/detail.css" rel="stylesheet">'
+js=''
+}
+<body>
+    {include file="public:nav"}
+    <div class="nav-content common-width">
+        <a href="{:url('index/index')}">首页</a> > <a href="{:url('index/articlelist',['mark'=>$mark.mark,'type'=>$type])}">{$mark.title}</a>{if isset($cate)} > <a href="{:url('index/articlelist',['mark'=>$mark.mark,'type'=>$type,'cate_id'=>$cate.id])}">{$cate.name}</a>{/if}
+    </div>
+    <div class="main-content common-width">
+        {if count($cateList) > 0}
+        <div class="list-cate">
+            <div class="list-left">
+                <div class="left-list-title">{$mark.title}</div>
+                {foreach name="cateList" item="v" key="key"}
+                <a class="left-list {if !isset($cate.id) && $key == 0}active{elseif isset($cate.id) && $v.id == $cate.id }active{/if}" href="{:url('index/articlelist',['mark'=>$mark.mark,'type'=>$type,'cate_id'=>$v.id])}">{$v.name}</a>
+                {/foreach}
+            </div>
+        {/if}
+        <div class="content-wrap content-item  content-list-wrap">
+            <div class="content-title">{$content.title}</div>
+            <div class="content-time">发布时间：{$content.sendtime}</div>
+            <div class="content-content">{$content.content}</div>
+        </div>
+            {if count($cateList) > 0}
+        </div>
+        {/if}
+    </div>
+    {include file="public:footer"}
+</body>
+<script>
+
+</script>
+</html>

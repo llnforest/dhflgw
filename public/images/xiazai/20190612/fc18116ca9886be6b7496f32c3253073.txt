@@ -1,0 +1,6 @@
+查询结构器
+
+->where($condition)
+$condition 的规范：
+
+['id >='=>1,'name'=>'你好','name [not] like'=>'%你好%','id [not] in (1,2,3)'=>null]

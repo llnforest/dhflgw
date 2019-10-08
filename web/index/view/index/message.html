@@ -1,0 +1,26 @@
+{include file="public:head" title="detail"
+css='<link href="__StaticStyle__/css/detail.css" rel="stylesheet">'
+js=''
+}
+<body>
+    {include file="public:nav"}
+    <div class="nav-content common-width">
+        <a href="{:url('index/index')}">首页</a> > <a href="{:url('index/articlelist',['mark'=>$mark.mark,'type'=>$type])}">{$mark.title}</a>{if isset($cate)} > <a href="{:url('index/articlelist',['mark'=>$mark.mark,'type'=>$type,'cate_id'=>$cate.id])}">{$cate.name}</a>{/if}
+    </div>
+    <div class="main-content common-width">
+        <a href="{:url('index/sendmessage')}" class="send-message">写信件</a>
+        <div class="content-wrap content-item  content-list-wrap">
+            <div class="content-message">{$content.message}</div>
+            <div class="content-time">写信时间：{$content.sendtime|date="Y-m-d H:i:s",###}</div>
+            {if $content.isstate == 1}
+            <div class="re-content">回复内容：</div>
+            <div class="content-content">{$content.recontent}</div>
+            {/if}
+        </div>
+    </div>
+    {include file="public:footer"}
+</body>
+<script>
+
+</script>
+</html>
