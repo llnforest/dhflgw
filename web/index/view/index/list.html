@@ -4,6 +4,7 @@ js=''
 }
 <body>
     {include file="public:nav"}
+    <div class="index-bg-top" style="background:url(__ImagePath__{$banner}) no-repeat center;"></div>
     <div class="nav-content common-width">
         <a href="{:url('index/index')}">首页</a> > <a href="{:url('index/articlelist',['mark'=>$mark.mark,'type'=>$type])}">{$mark.title}</a>{if isset($cate)} > <a href="{:url('index/articlelist',['mark'=>$mark.mark,'type'=>$type,'cate_id'=>$cate.id])}">{$cate.name}</a>{/if}
     </div>

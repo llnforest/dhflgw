@@ -33,7 +33,7 @@
                         <input class="image" type="hidden" name="url" value="{$info.url??''}">
                         <img class="mini-image {$info.url?'':'hidden'}" data-path="__ImagePath__" src="{$info.url?'__ImagePath__'.$info.url:''}">
                     </button>
-                    <span class="red block">(图片建议大小 116*90)</span>
+                    <span class="red block">(图片建议大小 1920*591)</span>
                 </td>
             </tr>
             

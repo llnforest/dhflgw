@@ -31,7 +31,7 @@ class Index extends BaseController{
         }
         $this->data['cateList'] = $cateList;
         $this->data['linkList'] = BaseContentCategoryModel::where(['mark'=>'Link'])->order('sort asc')->select();
-        $this->data['bannerList'] = BaseImgModel::where(['position_id' => 35])->order('sort asc')->select();
+        $this->data['banner'] = BaseImgModel::where(['position_id' => 1])->order('sort asc')->value('url');
         $this->data['nav'] = 'index';
         return view('index/index',$this->data);
     }
@@ -39,6 +39,7 @@ class Index extends BaseController{
     //文章列表
     public function articlelist(){
         $this->data['mark'] = BaseMarkModel::get(['mark'=>$this->param['mark']]);
+        $this->data['banner'] = BaseImgModel::where(['position_id' => $this->data['mark']['id']])->order('sort asc')->value('url');
         if(!empty($this->param['cate_id'])){
             $this->data['cate'] = BaseContentCategoryModel::get($this->param['cate_id']);
             $where = ['cate_id'=>$this->param['cate_id']];
