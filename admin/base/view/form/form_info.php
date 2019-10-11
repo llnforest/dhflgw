@@ -42,6 +42,12 @@
                 </td>
             </tr>
             <tr>
+                <th>联系号码</th>
+                <td>
+                    <input class="form-control text" type="text" name="phone" value="{$info.phone??''}" placeholder="联系号码">
+                </td>
+            </tr>
+            <tr>
                 <th>版权归属</th>
                 <td>
                     <input class="form-control text" type="text" name="power" value="{$info.power??''}" placeholder="版权归属">
