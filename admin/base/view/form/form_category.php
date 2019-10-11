@@ -3,7 +3,7 @@
     <table class="table table-bordered">
         <tbody>
             <tr>
-                <th>标识分类</th>
+                <th>一级导航</th>
                 <td >
                     <div class="layui-form select">
                         <select name="mark" class="form-control text">
@@ -17,14 +17,14 @@
             </tr>
     
             <tr>
-                <th>分类名称 </th>
+                <th>二级导航 </th>
                 <td>
                     <input class="form-control text" type="text" name="name" value="{$info.name??''}" placeholder="分类名称">
                     <span class="form-required">*</span>
                 </td>
             </tr>
             <tr>
-                <th>分类排序</th>
+                <th>导航排序</th>
                 <td>
                     <input class="form-control text" type="text" name="sort" value="{$info.sort??''}" placeholder="分类排序">
                 </td>

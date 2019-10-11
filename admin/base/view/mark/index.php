@@ -1,9 +1,9 @@
 <ul class="nav nav-tabs">
     {if condition="checkPath('mark/index')"}
-    <li class="active"><a href="{:Url('mark/index')}">导航列表</a></li>
+    <li class="active"><a href="{:Url('mark/index')}">一级导航</a></li>
     {/if}
     {if condition="checkPath('mark/markAdd')"}
-    <li><a href="{:Url('mark/markAdd')}">添加导航</a></li>
+    <li><a href="{:Url('mark/markAdd')}">添加一级导航</a></li>
     {/if}
 </ul>
  <div class="layui-form">
@@ -12,8 +12,10 @@
             <thead>
             <tr>
                 <th width="15"><input type="checkbox"  lay-skin="primary" lay-filter="allChoose">
-                <th width="80">导航名称</th>
+                <th width="80">图片</th>
+                <th width="80">一级导航</th>
                 <th width="80">标识</th>
+                <th width="180">描述</th>
                 <th width="80">排序<span order="sort" class="order-sort"> </span></th>
                 <th width="80">操作</th>
             </tr>
@@ -22,8 +24,11 @@
             {foreach $list as $v}
                 <tr>
                     <td><input type="checkbox" name="batch_id" data-id="{$v.id}" lay-skin="primary" lay-filter="itemChoose"></td>
+
+                    <td ><img class="mini-image" src="{$v.img?'__ImagePath__'.$v.img:''}" style="width:80px"></td>
                     <td>{$v.title}</td>
                     <td>{$v.mark}</td>
+                    <td>{$v.remark}</td>
                     <td>
                         {if condition="checkPath('mark/inputMark')"}
                         <input class="form-control change-data short-input"  post-id="{$v.id}" post-url="{:url('mark/inputMark')}" data-name="sort" value="{$v.sort}">

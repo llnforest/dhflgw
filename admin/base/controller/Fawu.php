@@ -12,9 +12,9 @@ use model\BaseContentImagesModel;
 use think\Config;
 use think\Validate;
 
-class Yaowen extends BaseController{
+class Fawu extends BaseController{
 
-    private $roleValidate = ['title|信息标题' => 'require','img|封面图片'=>'require','description|信息简述'=>'require','sort|排序' => 'number|lt:256'];
+    private $roleValidate = ['title|信息标题' => 'require', 'description|信息简述'=>'require','sort|排序' => 'number|lt:256'];
     //构造函数
     public function __construct()
     {
@@ -63,7 +63,7 @@ class Yaowen extends BaseController{
                 }
             }
 
-            return operateResult($content,'yaowen/index','add');
+            return operateResult($content,'fawu/index','add');
         }
         $whe['mark'] = request()->controller();
         $cateList= BaseContentCategoryModel::order('sort asc')->where($whe)->select();
@@ -92,7 +92,7 @@ class Yaowen extends BaseController{
                 $imgModel->saveAll($imgList);
             }
           
-           return operateResult(true,'yaowen/index','edit');
+           return operateResult(true,'fawu/index','edit');
         }
         $data['imgList'] = BaseContentImagesModel::where(['content_id'=>$this->id])->order('sort asc')->select();
         $whe['mark'] = request()->controller();
@@ -118,7 +118,7 @@ class Yaowen extends BaseController{
             }
             BaseContentImagesModel::destroy(['content_id' => $this->id]);
   
-            return operateResult($result->delete(),'yaowen/index','del');
+            return operateResult($result->delete(),'fawu/index','del');
         }
         return ['code'=>0,'msg'=>lang('sys_method_error')];
     }
@@ -154,7 +154,7 @@ class Yaowen extends BaseController{
             foreach ($result as $v) {
                 @unlink(Config::get('upload.path') . $v['img']);
             }
-            return operateResult($data,'yaowen/index','del');
+            return operateResult($data,'fawu/index','del');
         }
         return ['code'=>0,'msg'=>lang('sys_method_error')];
     }

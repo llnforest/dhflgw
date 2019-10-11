@@ -13,22 +13,28 @@
         </div>
         <div class="footer-right clear-fix">
             <div class="footer-list">
-                <a href="" class="footer-item-title">首页</a>
-                <a href="" class="footer-item  item">律师精英</a>
-                <a href="" class="footer-item item">律师精英</a>
-                <a href="" class="footer-item item">律师精英</a>
-                <a href="" class="footer-item item">律师精英</a>
-                <a href="" class="footer-item item">律师精英</a>
+                {if isset($navList[3])}
+                <a href="{:url('index/articlelist',['mark'=>$navList[3]['mark'],'type'=>'nav'])}" class="footer-item-title">{$navList[3]['title']}</a>
+                {foreach $navList[3]['sub'] as $v}
+                <a href="{:url('index/articlelist',['cate_id'=>$v.id,'mark'=>$navList[3]['mark'],'type'=>'nav'])}" class="footer-item item">{$v.name}</a>
+                {/foreach}
+                {/if}
             </div>
             <div class="footer-list">
-                <a href="" class="footer-item-title">团队建设</a>
-                <a href="" class="footer-item item">律师精英</a>
-                <a href="" class="footer-item item">律师精英</a>
+                {if isset($navList[4])}
+                <a href="{:url('index/articlelist',['mark'=>$navList[4]['mark'],'type'=>'nav'])}" class="footer-item-title">{$navList[4]['title']}</a>
+                {foreach $navList[4]['sub'] as $v}
+                <a href="{:url('index/articlelist',['cate_id'=>$v.id,'mark'=>$navList[4]['mark'],'type'=>'nav'])}" class="footer-item item">{$v.name}</a>
+                {/foreach}
+                {/if}
             </div>
             <div class="footer-list">
-                <a href="" class="footer-item-title">关于我们</a>
-                <a href="" class="footer-item item">律师精英</a>
-                <a href="" class="footer-item item">律师精英</a>
+                {if isset($navList[6])}
+                <a href="{:url('index/articlelist',['mark'=>$navList[6]['mark'],'type'=>'nav'])}" class="footer-item-title">{$navList[6]['title']}</a>
+                {foreach $navList[6]['sub'] as $v}
+                <a href="{:url('index/articlelist',['cate_id'=>$v.id,'mark'=>$navList[6]['mark'],'type'=>'nav'])}" class="footer-item item">{$v.name}</a>
+                {/foreach}
+                {/if}
             </div>
             <div class="footer-weixin">
                 <a href="" class="footer-item-title">关注我们</a>

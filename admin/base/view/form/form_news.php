@@ -8,19 +8,6 @@
 <div class="col-sm-12">
     <table class="table table-bordered">
         <tbody>
-            <tr>
-                <th>信息分类</th>
-                <td>
-                    <div class="layui-form select">
-                        <select name="cate_id" class="form-control text">
-                            {foreach $cateList as $item}
-                            <option value="{$item.id}" {if input('cate_id') == $item.id}selected{/if}>{$item.name}</option>
-                            {/foreach}
-                        </select>
-                    </div>
-                    <span class="form-required">*</span>
-                </td>
-            </tr>
 
             <tr>
                 <th>信息标题</th>
@@ -37,7 +24,7 @@
                         <input class="image" type="hidden" name="img" value="{$info.img??''}">
                         <img class="mini-image {$info.img?'':'hidden'}" data-path="__ImagePath__" src="{$info.img?'__ImagePath__'.$info.img:''}">
                     </button>
-                    <span class="red block">(图片建议大小 320*190)</span>
+                    <span class="red block">(图片建议大小 120*80)</span>
                 </td>
             </tr>
             <tr>

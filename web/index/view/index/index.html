@@ -12,110 +12,20 @@ js='<script type="text/javascript" src="__StaticStyle__/js/jquery-3.2.1.min.js">
         <div class="swiper-container">
             <div class="swiper-wrapper">
                 <div class="swiper-slide">
-                    <a class="people-item" style="background:url(__StaticStyle__/image/people_bg.jpg) no-repeat center;" href="">
+                    {foreach $peopleList as $k=>$item}
+                    <a class="people-item  {if $k%4 == 3}no-margin-r{/if}" style="background:url(__ImagePath__{$item.img}) no-repeat center;" href="{:url("index/articledetail",['id'=>$item.id,'mark'=>$item.mark,'type'=>'list'])}">
                         <div class="people-info">
-                            <div class="people-name">何玉龙律师</div>
+                            <div class="people-name">{$item.title}</div>
                             <div class="people-level">主办律师</div>
                             <div class="people-phone-top"></div>
-                            <div class="people-phone">15888231221</div>
-                            <div class="people-desc">主要处理房产纠纷，主要处理房产纠纷主要处理房产纠纷主要处理房产纠纷主要处理房产纠纷，主要处理房产纠纷主要处理房产纠纷主要处理房产纠纷主要处理房产纠纷</div>
+                            <div class="people-phone"></div>
+                            <div class="people-desc">{$item.description}</div>
                             <div class="people-site">合肥</div>
                         </div>
                     </a>
-                    <a class="people-item" style="background:url(__StaticStyle__/image/people_bg.jpg) no-repeat center;" href="">
-                        <div class="people-info">
-                            <div class="people-name">何玉龙律师</div>
-                            <div class="people-level">主办律师</div>
-                            <div class="people-phone-top"></div>
-                            <div class="people-phone">15888231221</div>
-                            <div class="people-desc">主要处理房产纠纷，主要处理房产纠纷主要处理房产纠纷主要处理房产纠纷主要处理房产纠纷，主要处理房产纠纷主要处理房产纠纷主要处理房产纠纷主要处理房产纠纷</div>
-                            <div class="people-site">合肥</div>
-                        </div>
-                    </a>
-                    <a class="people-item" style="background:url(__StaticStyle__/image/people_bg.jpg) no-repeat center;" href="">
-                        <div class="people-info">
-                            <div class="people-name">何玉龙律师</div>
-                            <div class="people-level">主办律师</div>
-                            <div class="people-phone-top"></div>
-                            <div class="people-phone">15888231221</div>
-                            <div class="people-desc">主要处理房产纠纷，主要处理房产纠纷主要处理房产纠纷主要处理房产纠纷主要处理房产纠纷，主要处理房产纠纷主要处理房产纠纷主要处理房产纠纷主要处理房产纠纷</div>
-                            <div class="people-site">合肥</div>
-                        </div>
-                    </a>
-                    <a class="people-item no-margin-r" style="background:url(__StaticStyle__/image/people_bg.jpg) no-repeat center;" href="">
-                        <div class="people-info">
-                            <div class="people-name">何玉龙律师</div>
-                            <div class="people-level">主办律师</div>
-                            <div class="people-phone-top"></div>
-                            <div class="people-phone">15888231221</div>
-                            <div class="people-desc">主要处理房产纠纷，主要处理房产纠纷主要处理房产纠纷主要处理房产纠纷主要处理房产纠纷，主要处理房产纠纷主要处理房产纠纷主要处理房产纠纷主要处理房产纠纷</div>
-                            <div class="people-site">合肥</div>
-                        </div>
-                    </a>
-                    <a class="people-item" style="background:url(__StaticStyle__/image/people_bg.jpg) no-repeat center;" href="">
-                        <div class="people-info">
-                            <div class="people-name">何玉龙律师</div>
-                            <div class="people-level">主办律师</div>
-                            <div class="people-phone-top"></div>
-                            <div class="people-phone">15888231221</div>
-                            <div class="people-desc">主要处理房产纠纷，主要处理房产纠纷主要处理房产纠纷主要处理房产纠纷主要处理房产纠纷，主要处理房产纠纷主要处理房产纠纷主要处理房产纠纷主要处理房产纠纷</div>
-                            <div class="people-site">合肥</div>
-                        </div>
-                    </a>
+                    {if $k == 7}</div><div class="swiper-slide">{/if}
+                    {/foreach}
 
-                </div>
-
-                <div class="swiper-slide">
-                    <a class="people-item" style="background:url(__StaticStyle__/image/people_bg.jpg) no-repeat center;" href="">
-                        <div class="people-info">
-                            <div class="people-name">何玉龙律师</div>
-                            <div class="people-level">主办律师</div>
-                            <div class="people-phone-top"></div>
-                            <div class="people-phone">15888231221</div>
-                            <div class="people-desc">主要处理房产纠纷，主要处理房产纠纷主要处理房产纠纷主要处理房产纠纷主要处理房产纠纷，主要处理房产纠纷主要处理房产纠纷主要处理房产纠纷主要处理房产纠纷</div>
-                            <div class="people-site">合肥</div>
-                        </div>
-                    </a>
-                    <a class="people-item" style="background:url(__StaticStyle__/image/people_bg.jpg) no-repeat center;" href="">
-                        <div class="people-info">
-                            <div class="people-name">何玉龙律师</div>
-                            <div class="people-level">主办律师</div>
-                            <div class="people-phone-top"></div>
-                            <div class="people-phone">15888231221</div>
-                            <div class="people-desc">主要处理房产纠纷，主要处理房产纠纷主要处理房产纠纷主要处理房产纠纷主要处理房产纠纷，主要处理房产纠纷主要处理房产纠纷主要处理房产纠纷主要处理房产纠纷</div>
-                            <div class="people-site">合肥</div>
-                        </div>
-                    </a>
-                    <a class="people-item" style="background:url(__StaticStyle__/image/people_bg.jpg) no-repeat center;" href="">
-                        <div class="people-info">
-                            <div class="people-name">何玉龙律师</div>
-                            <div class="people-level">主办律师</div>
-                            <div class="people-phone-top"></div>
-                            <div class="people-phone">15888231221</div>
-                            <div class="people-desc">主要处理房产纠纷，主要处理房产纠纷主要处理房产纠纷主要处理房产纠纷主要处理房产纠纷，主要处理房产纠纷主要处理房产纠纷主要处理房产纠纷主要处理房产纠纷</div>
-                            <div class="people-site">合肥</div>
-                        </div>
-                    </a>
-                    <a class="people-item no-margin-r" style="background:url(__StaticStyle__/image/people_bg.jpg) no-repeat center;" href="">
-                        <div class="people-info">
-                            <div class="people-name">何玉龙律师</div>
-                            <div class="people-level">主办律师</div>
-                            <div class="people-phone-top"></div>
-                            <div class="people-phone">15888231221</div>
-                            <div class="people-desc">主要处理房产纠纷，主要处理房产纠纷主要处理房产纠纷主要处理房产纠纷主要处理房产纠纷，主要处理房产纠纷主要处理房产纠纷主要处理房产纠纷主要处理房产纠纷</div>
-                            <div class="people-site">合肥</div>
-                        </div>
-                    </a>
-                    <a class="people-item" style="background:url(__StaticStyle__/image/people_bg.jpg) no-repeat center;" href="">
-                        <div class="people-info">
-                            <div class="people-name">何玉龙律师</div>
-                            <div class="people-level">主办律师</div>
-                            <div class="people-phone-top"></div>
-                            <div class="people-phone">15888231221</div>
-                            <div class="people-desc">主要处理房产纠纷，主要处理房产纠纷主要处理房产纠纷主要处理房产纠纷主要处理房产纠纷，主要处理房产纠纷主要处理房产纠纷主要处理房产纠纷主要处理房产纠纷</div>
-                            <div class="people-site">合肥</div>
-                        </div>
-                    </a>
                 </div>
             </div>
             <ul class="slidershow-nav">
@@ -130,41 +40,25 @@ js='<script type="text/javascript" src="__StaticStyle__/js/jquery-3.2.1.min.js">
         <div class="main-title">案例法规</div>
         <div class="main-desc">了解案例法规，捍卫自己的合法权益</div>
         <div class="case-img-list clear-fix">
-            <a class="case-img-item"  href="">
-                <div class="case-img" style="background:url(__StaticStyle__/image/case_bg.jpg) no-repeat center;background-size:380px 248px;"></div>
-                <div class="case-name">最高检：公布侵犯人身自由权赔偿标准</div>
+            {foreach $caseList as $k=>$item}
+            {if $k < 3}
+            <a class="case-img-item {if $k%3 == 2}no-margin-r{/if}"  href="{:url("index/articledetail",['id'=>$item.id,'mark'=>$item.mark,'type'=>'list'])}">
+                <div class="case-img" style="background:url(__ImagePath__{$item.img}) no-repeat center;background-size:380px 248px;"></div>
+                <div class="case-name">{$item.title}</div>
             </a>
-            <a class="case-img-item"  href="">
-                <div class="case-img" style="background:url(__StaticStyle__/image/case_bg.jpg) no-repeat center;background-size:380px 248px;"></div>
-                <div class="case-name">最高检：公布侵犯人身自由权赔偿标准</div>
-            </a>
-            <a class="case-img-item no-margin-r"  href="">
-                <div class="case-img" style="background:url(__StaticStyle__/image/case_bg.jpg) no-repeat center;background-size:380px 248px;"></div>
-                <div class="case-name">最高检：公布侵犯人身自由权赔偿标准</div>
-            </a>
+            {/if}
+            {/foreach}
         </div>
 
         <div class="case-title-list clear-fix">
-            <a class="case-title-item"  href="">
-                <span class="case-title-label">[诉讼仲裁]</span>
-                <span class="case-title">法院判缓刑的条件是什么？需要坐牢吗？</span>
+            {foreach $caseList as $k=>$item}
+            {if $k >= 3}
+            <a class="case-title-item  {if $k%3 == 2}no-margin-r{/if}"  href="{:url("index/articledetail",['id'=>$item.id,'mark'=>$item.mark,'type'=>'list'])}">
+                <span class="case-title-label">[{$item.name}]</span>
+                <span class="case-title">{$item.title}</span>
             </a>
-            <a class="case-title-item"  href="">
-                <span class="case-title-label">[诉讼仲裁]</span>
-                <span class="case-title">法院判缓刑的条件是什么？需要坐牢吗？</span>
-            </a>
-            <a class="case-title-item no-margin-r"  href="">
-                <span class="case-title-label">[诉讼仲裁]</span>
-                <span class="case-title">法院判缓刑的条件是什么？需要坐牢吗？</span>
-            </a>
-            <a class="case-title-item"  href="">
-                <span class="case-title-label">[诉讼仲裁]</span>
-                <span class="case-title">法院判缓刑的条件是什么？需要坐牢吗？</span>
-            </a>
-            <a class="case-title-item"  href="">
-                <span class="case-title-label">[诉讼仲裁]</span>
-                <span class="case-title">法院判缓刑的条件是什么？需要坐牢吗？</span>
-            </a>
+            {/if}
+            {/foreach}
         </div>
 
     </div>
@@ -175,26 +69,13 @@ js='<script type="text/javascript" src="__StaticStyle__/js/jquery-3.2.1.min.js">
         <div class="main-title">业务领域</div>
         <div class="main-desc">“术业有专攻”，我们一定及时高效的为您出解决方案</div>
         <div class="busi-list clear-fix">
-            <a class="busi-item" href="">
-                <div class="busi-icon" style="background:url(__StaticStyle__/image/1_10.png) no-repeat center;background-size:105px 105px;"></div>
-                <div class="busi-title">私人律师</div>
-                <div class="busi-desc">私人律师一对一服务，私人律师一对一服务</div>
+            {foreach $markList as $item}
+            <a class="busi-item" href="{:url('index/articlelist',['mark'=>$item.mark,'type'=>'nav'])}">
+                <div class="busi-icon" style="background:url(__ImagePath__{$item.img}) no-repeat center;background-size:105px 105px;"></div>
+                <div class="busi-title">{$item.title}</div>
+                <div class="busi-desc">{$item.remark}</div>
             </a>
-            <a class="busi-item" href="">
-                <div class="busi-icon" style="background:url(__StaticStyle__/image/2_10.jpg) no-repeat center;background-size:105px 105px;"></div>
-                <div class="busi-title">企业法务</div>
-                <div class="busi-desc">私人律师一对一服务，私人律师一对一服务</div>
-            </a>
-            <a class="busi-item" href="">
-                <div class="busi-icon" style="background:url(__StaticStyle__/image/3_10.png) no-repeat center;background-size:105px 105px;"></div>
-                <div class="busi-title">法律咨询</div>
-                <div class="busi-desc">私人律师一对一服务，私人律师一对一服务</div>
-            </a>
-            <a class="busi-item" href="">
-                <div class="busi-icon" style="background:url(__StaticStyle__/image/4_10.png) no-repeat center;background-size:105px 105px;"></div>
-                <div class="busi-title">律师诉讼</div>
-                <div class="busi-desc">私人律师一对一服务，私人律师一对一服务</div>
-            </a>
+            {/foreach}
         </div>
 
     </div>
@@ -204,51 +85,22 @@ js='<script type="text/javascript" src="__StaticStyle__/js/jquery-3.2.1.min.js">
     <div class="main-title">最新法讯</div>
     <div class="main-desc">知晓身边最新法讯，掌握法律知识</div>
     <div class="message-list clear-fix">
-        <a class="message-item"  style="background:url(__StaticStyle__/image/mes_img.jpg) no-repeat;background-size:120px 80px;" href="">
-            <div class="message-title">劳动合同新规定出台</div>
-            <div class="message-desc">法院判缓刑的条件是什么？判缓刑需要坐牢吗？
-            </div>
-            <span class="message-time">2019-09-09</span>
+        {foreach $messageList as $item}
+        <a class="message-item"  style="background:url(__ImagePath__{$item.img}) no-repeat;background-size:120px 80px;" href="{:url("index/articledetail",['id'=>$item.id,'mark'=>$item.mark,'type'=>'list'])}">
+            <div class="message-title">{$item.title}</div>
+            <div class="message-desc">{$item.description}</div>
+            <span class="message-time"><?= explode(' ',$item['sendtime'])[0];?></span>
         </a>
-        <a class="message-item"  style="background:url(__StaticStyle__/image/mes_img.jpg) no-repeat;background-size:120px 80px;" href="">
-            <div class="message-title">劳动合同新规定出台</div>
-            <div class="message-desc">法院判缓刑的条件是什么？判缓刑需要坐牢吗？
-            </div>
-            <span class="message-time">2019-09-09</span>
-        </a>
-        <a class="message-item"  style="background:url(__StaticStyle__/image/mes_img.jpg) no-repeat;background-size:120px 80px;" href="">
-            <div class="message-title">劳动合同新规定出台</div>
-            <div class="message-desc">法院判缓刑的条件是什么？判缓刑需要坐牢吗？
-            </div>
-            <span class="message-time">2019-09-09</span>
-        </a>
-        <a class="message-item"  style="background:url(__StaticStyle__/image/mes_img.jpg) no-repeat;background-size:120px 80px;" href="">
-            <div class="message-title">劳动合同新规定出台</div>
-            <div class="message-desc">法院判缓刑的条件是什么？判缓刑需要坐牢吗？
-            </div>
-            <span class="message-time">2019-09-09</span>
-        </a><a class="message-item"  style="background:url(__StaticStyle__/image/mes_img.jpg) no-repeat;background-size:120px 80px;" href="">
-            <div class="message-title">劳动合同新规定出台</div>
-            <div class="message-desc">法院判缓刑的条件是什么？判缓刑需要坐牢吗？
-            </div>
-            <span class="message-time">2019-09-09</span>
-        </a><a class="message-item"  style="background:url(__StaticStyle__/image/mes_img.jpg) no-repeat;background-size:120px 80px;" href="">
-            <div class="message-title">劳动合同新规定出台</div>
-            <div class="message-desc">法院判缓刑的条件是什么？判缓刑需要坐牢吗？
-            </div>
-            <span class="message-time">2019-09-09</span>
-        </a>
+        {/foreach}
     </div>
     <div class="message-swiper message-swiper">
         <div class="swiper-container">
             <div class="swiper-wrapper">
-                <a class="swiper-slide" style="background:url(__StaticStyle__/image/swiper_img.jpg) no-repeat center;background-size:400px 270px;">
-
-                </a><a class="swiper-slide" style="background:url(__StaticStyle__/image/swiper_img.jpg) no-repeat center;background-size:400px 270px;">
-
-                </a><a class="swiper-slide" style="background:url(__StaticStyle__/image/swiper_img.jpg) no-repeat center;background-size:400px 270px;">
+                {foreach $bannerList as $item}
+                <a class="swiper-slide" style="background:url(__ImagePath__{$item.url}) no-repeat center;background-size:400px 270px;" href="{$item.title}">
 
                 </a>
+                {/foreach}
             </div>
             <ul class="slidershow-nav">
             </ul>
@@ -260,12 +112,12 @@ js='<script type="text/javascript" src="__StaticStyle__/js/jquery-3.2.1.min.js">
     <div id="cor-wrap" class="common-width clear-fix">
         <div class="main-title">公司介绍</div>
         <div class="main-desc">遇见德恒，了解德恒</div>
-        <div class="cor-item"  style="background:url(__StaticStyle__/image/cor_bg.jpg) no-repeat;background-size:560px 360px;" href="">
-            <div class="cor-title">安徽德恒法律咨询有限公司</div>
+        <div class="cor-item"  style="background:url(__ImagePath__{$about.img}) no-repeat;background-size:560px 360px;" href="">
+            <div class="cor-title">{$about.title}</div>
             <div class="cor-title-item">DEHENG LEGAL</div>
-            <div class="cor-desc">法院判缓刑的条件是什么？判缓刑需要坐牢吗？法院判缓刑的条件是什么？判缓刑需要坐牢吗？法院判缓刑的条件是什么？判缓刑需要坐牢吗？法院判缓刑的条件是什么？判缓刑需要坐牢吗？法院判缓刑的条件是什么？判缓刑需要坐牢吗？
+            <div class="cor-desc">{$about.description}
             </div>
-            <a class="cor-btn" href="">了解更多</a>
+            <a class="cor-btn" href="{:url("index/articledetail",['id'=>$about.id,'mark'=>$about.mark,'type'=>'list'])}">了解更多</a>
         </div>
     </div>
 </div>
@@ -290,36 +142,19 @@ js='<script type="text/javascript" src="__StaticStyle__/js/jquery-3.2.1.min.js">
     <div class="swiper-container">
         <div class="swiper-wrapper">
             <div class="swiper-slide" >
-                <a class="link-item" style="background:url(__StaticStyle__/image/link_bg.png) no-repeat center;background-size:180px 70px;"></a>
-                <a class="link-item" style="background:url(__StaticStyle__/image/link_bg.png) no-repeat center;background-size:180px 70px;"></a>
-                <a class="link-item" style="background:url(__StaticStyle__/image/link_bg.png) no-repeat center;background-size:180px 70px;"></a>
-                <a class="link-item" style="background:url(__StaticStyle__/image/link_bg.png) no-repeat center;background-size:180px 70px;"></a>
-                <a class="link-item" style="background:url(__StaticStyle__/image/link_bg.png) no-repeat center;background-size:180px 70px;"></a>
-                <a class="link-item no-margin-r" style="background:url(__StaticStyle__/image/link_bg.png) no-repeat center;background-size:180px 70px;"></a>
-                <a class="link-item" style="background:url(__StaticStyle__/image/link_bg.png) no-repeat center;background-size:180px 70px;"></a>
-                <a class="link-item" style="background:url(__StaticStyle__/image/link_bg.png) no-repeat center;background-size:180px 70px;"></a>
-                <a class="link-item" style="background:url(__StaticStyle__/image/link_bg.png) no-repeat center;background-size:180px 70px;"></a>
-                <a class="link-item" style="background:url(__StaticStyle__/image/link_bg.png) no-repeat center;background-size:180px 70px;"></a>
-                <a class="link-item" style="background:url(__StaticStyle__/image/link_bg.png) no-repeat center;background-size:180px 70px;"></a>
-                <a class="link-item no-margin-r" style="background:url(__StaticStyle__/image/link_bg.png) no-repeat center;background-size:180px 70px;"></a>
-                <a class="link-item" style="background:url(__StaticStyle__/image/link_bg.png) no-repeat center;background-size:180px 70px;"></a>
-                <a class="link-item" style="background:url(__StaticStyle__/image/link_bg.png) no-repeat center;background-size:180px 70px;"></a>
-                <a class="link-item" style="background:url(__StaticStyle__/image/link_bg.png) no-repeat center;background-size:180px 70px;"></a>
-                <a class="link-item" style="background:url(__StaticStyle__/image/link_bg.png) no-repeat center;background-size:180px 70px;"></a>
-                <a class="link-item" style="background:url(__StaticStyle__/image/link_bg.png) no-repeat center;background-size:180px 70px;"></a>
-                <a class="link-item no-margin-r" style="background:url(__StaticStyle__/image/link_bg.png) no-repeat center;background-size:180px 70px;"></a>
+                {foreach $kehuList as $k=>$item}
+                <a class="link-item {if $k%6 == 5}no-margin-r{/if}" href="{$item.linkurl}" style="background:url(__ImagePath__{$item.img}) no-repeat center;background-size:180px 70px;"></a>
+                {/foreach}
             </div>
             <div class="swiper-slide" >
-                <a class="link-item" style="background:url(__StaticStyle__/image/link_bg.png) no-repeat center;background-size:180px 70px;"></a>
-                <a class="link-item" style="background:url(__StaticStyle__/image/link_bg.png) no-repeat center;background-size:180px 70px;"></a>
+                {foreach $hezuoList as $k=>$item}
+                <a class="link-item {if $k%6 == 5}no-margin-r{/if}" href="{$item.linkurl}" style="background:url(__ImagePath__{$item.img}) no-repeat center;background-size:180px 70px;"></a>
+                {/foreach}
             </div>
             <div class="swiper-slide" >
-                <a class="link-item" style="background:url(__StaticStyle__/image/link_bg.png) no-repeat center;background-size:180px 70px;"></a>
-                <a class="link-item" style="background:url(__StaticStyle__/image/link_bg.png) no-repeat center;background-size:180px 70px;"></a>
-                <a class="link-item" style="background:url(__StaticStyle__/image/link_bg.png) no-repeat center;background-size:180px 70px;"></a>
-                <a class="link-item" style="background:url(__StaticStyle__/image/link_bg.png) no-repeat center;background-size:180px 70px;"></a>
-                <a class="link-item" style="background:url(__StaticStyle__/image/link_bg.png) no-repeat center;background-size:180px 70px;"></a>
-                <a class="link-item no-margin-r" style="background:url(__StaticStyle__/image/link_bg.png) no-repeat center;background-size:180px 70px;"></a>
+                {foreach $xiezhuList as $k=>$item}
+                <a class="link-item {if $k%6 == 5}no-margin-r{/if}" href="{$item.linkurl}" style="background:url(__ImagePath__{$item.img}) no-repeat center;background-size:180px 70px;"></a>
+                {/foreach}
             </div>
         </div>
         <ul class="slidershow-nav">
@@ -392,13 +227,13 @@ $(function(){
             $(this).find(".people-info").animate({
                 top:'180px'
             }, 300 );
-            $(this).find(".people-phone,.people-phone-top").fadeIn("slow");
+            $(this).find(".people-phone-top").fadeIn("slow");
         },
         function(){
             $(this).find(".people-info").animate({
                 top:'260px'
             }, 300 );
-            $(this).find(".people-phone,.people-phone-top").fadeOut("fast");
+            $(this).find(".people-phone-top").fadeOut("fast");
         }
     );
 })

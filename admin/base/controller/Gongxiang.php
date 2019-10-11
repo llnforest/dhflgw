@@ -12,9 +12,9 @@ use model\BaseContentImagesModel;
 use think\Config;
 use think\Validate;
 
-class Gaikuang extends BaseController{
+class Gongxiang extends BaseController{
 
-    private $roleValidate = ['title|信息标题' => 'require','sort|排序' => 'number|lt:256'];
+    private $roleValidate = ['title|信息标题' => 'require','description|信息简述'=>'require','sort|排序' => 'number|lt:256'];
     //构造函数
     public function __construct()
     {
@@ -63,7 +63,7 @@ class Gaikuang extends BaseController{
                 }
             }
 
-            return operateResult($content,'gaikuang/index','add');
+            return operateResult($content,'gongxiang/index','add');
         }
         $whe['mark'] = request()->controller();
         $cateList= BaseContentCategoryModel::order('sort asc')->where($whe)->select();
@@ -92,12 +92,11 @@ class Gaikuang extends BaseController{
                 $imgModel->saveAll($imgList);
             }
           
-           return operateResult(true,'gaikuang/index','edit');
+           return operateResult(true,'gongxiang/index','edit');
         }
         $data['imgList'] = BaseContentImagesModel::where(['content_id'=>$this->id])->order('sort asc')->select();
         $whe['mark'] = request()->controller();
         $cateList = BaseContentCategoryModel::order('sort asc')->where($whe)->select();
-        //print($cateList);
         $this->assign('cateList',$cateList);
         return view('contentEdit',$data);
     }
@@ -118,7 +117,7 @@ class Gaikuang extends BaseController{
             }
             BaseContentImagesModel::destroy(['content_id' => $this->id]);
   
-            return operateResult($result->delete(),'gaikuang/index','del');
+            return operateResult($result->delete(),'gongxiang/index','del');
         }
         return ['code'=>0,'msg'=>lang('sys_method_error')];
     }
@@ -154,7 +153,7 @@ class Gaikuang extends BaseController{
             foreach ($result as $v) {
                 @unlink(Config::get('upload.path') . $v['img']);
             }
-            return operateResult($data,'gaikuang/index','del');
+            return operateResult($data,'gongxiang/index','del');
         }
         return ['code'=>0,'msg'=>lang('sys_method_error')];
     }

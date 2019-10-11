@@ -25,13 +25,25 @@ class Index extends BaseController{
 
     //官网首页
     public function index(){
-        $cateList = BaseMarkModel::where(['is_good'=>1])->column('*','mark');
-        foreach($cateList as &$v){
-            $v['sublist'] = BaseContentModel::where(['mark'=>$v['mark']])->field('id,title,sendtime,description,img,mark')->order('is_good desc,sort asc,sendtime desc')->limit(8)->select();
-        }
-        $this->data['cateList'] = $cateList;
         $this->data['linkList'] = BaseContentCategoryModel::where(['mark'=>'Link'])->order('sort asc')->select();
         $this->data['banner'] = BaseImgModel::where(['position_id' => 1])->order('sort asc')->value('url');
+        $this->data['bannerList'] = BaseImgModel::where(['position_id' => 44])->order('sort asc')->select();
+        $this->data['peopleList'] = BaseContentModel::where(['is_good'=>1,'cate_id'=>85])->field('id,cate_id,mark,title,description,img')->order('sort asc,sendtime desc')->limit(16)->select();
+        $this->data['caseList'] = BaseContentModel::alias('a')
+            ->join('tp_base_content_category b','a.cate_id = b.id','left')
+            ->where(['is_good'=>1,'a.mark'=>'Anli'])
+            ->field('a.id,cate_id,a.mark,a.title,a.img,b.name')
+            ->order('a.sort asc,a.sendtime desc')
+            ->limit(12)
+            ->select();
+        $this->data['about'] = BaseContentModel::where(['cate_id'=>89])->field('id,cate_id,mark,title,description,img')->order('sort asc,sendtime desc')->find();
+        $this->data['messageList'] = BaseContentModel::where(['is_good'=>1,'cate_id'=>96])->field('id,cate_id,mark,title,description,img,sendtime')->order('sort asc,sendtime desc')->limit(6)->select();
+        $this->data['markList'] = BaseMarkModel::where(['is_good'=>1])->order('sort asc')->limit(4)->select();
+
+        $this->data['kehuList'] = BaseLinkModel::where(['cate_id'=>93])->order('sort asc')->limit(18)->select();
+        $this->data['hezuoList'] = BaseLinkModel::where(['cate_id'=>94])->order('sort asc')->limit(18)->select();
+        $this->data['xiezhuList'] = BaseLinkModel::where(['cate_id'=>95])->order('sort asc')->limit(18)->select();
+
         $this->data['nav'] = 'index';
         return view('index/index',$this->data);
     }
@@ -84,7 +96,7 @@ class Index extends BaseController{
         $this->data['type'] = $this->param['type'];
         $this->data['nav'] = $this->param['mark'];
         $this->data['cateList'] = BaseContentCategoryModel::where(['mark'=>$this->param['mark']])->order('sort asc')->select();
-
+        $this->data['banner'] = BaseImgModel::where(['position_id' => $this->data['mark']['id']])->order('sort asc')->value('url');
         if($this->data['nav'] == 'Message'){
             $this->data['content'] = BaseMessageModel::get(['id'=>$this->id]);
             return view('index/message',$this->data);

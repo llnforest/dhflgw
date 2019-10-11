@@ -45,7 +45,7 @@ class BaseController extends Controller
         $web_config=BaseInfoModel::where('id',1)->find();
         $this->assign('info',$web_config);
         //顶部页面
-        $this->assign('topImg',BaseImgModel::get(['position_id'=>36]));
+//        $this->assign('topImg',BaseImgModel::get(['position_id'=>36]));
         //当前时间
         $weekarray=array("日","一","二","三","四","五","六");
         $this->assign('nowTime',date('Y年m月d日',time()).' 星期'.$weekarray[date('w',time())]);

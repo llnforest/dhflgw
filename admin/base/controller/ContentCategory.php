@@ -15,7 +15,7 @@ use think\Validate;
 
 class ContentCategory extends BaseController{
 
-    private $roleValidate = ['name|分类名称' => 'require','sort|排序'=>'number|lt:256'];
+    private $roleValidate = ['name|二级导航' => 'require','sort|排序'=>'number|lt:256'];
     //构造函数
     public function __construct()
     {
@@ -35,7 +35,7 @@ class ContentCategory extends BaseController{
             ->order($orderBy)
             ->paginate($this->config_page,'',['query'=>$this->param]);
         $data['page']   = $data['list']->render();
-        $data['markList'] = BaseMarkModel::order('sort asc')->select();
+        $data['markList'] = BaseMarkModel::where(['is_nav' => 1])->order('sort asc')->select();
 
         return view('index',$data);
     }
@@ -47,7 +47,7 @@ class ContentCategory extends BaseController{
             if(!$validate->check($this->param)) return ['code' => 0, 'msg' => $validate->getError()];
             return operateResult(BaseContentCategoryModel::create($this->param),'contentCategory/index','add');
         }
-        $data['markList'] = BaseMarkModel::order('sort asc')->select();
+        $data['markList'] = BaseMarkModel::where(['is_nav' => 1])->order('sort asc')->select();
         return view('categoryAdd',$data);
     }
 
@@ -60,7 +60,7 @@ class ContentCategory extends BaseController{
             if(!$validate->check($this->param)) return ['code' => 0,'msg' => $validate->getError()];
             return operateResult($data['info']->save($this->param),'contentCategory/index','edit');
         }
-        $data['markList'] = BaseMarkModel::order('sort asc')->select();
+        $data['markList'] = BaseMarkModel::where(['is_nav' => 1])->order('sort asc')->select();
         return view('categoryEdit',$data);
     }
 

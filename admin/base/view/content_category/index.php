@@ -1,9 +1,9 @@
 <ul class="nav nav-tabs">
     {if condition="checkPath('contentCategory/index',['mark'=>'service'])"}
-    <li class="active"><a href="{:Url('contentCategory/index',['mark'=>input('mark')])}">分类列表</a></li>
+    <li class="active"><a href="{:Url('contentCategory/index',['mark'=>input('mark')])}">二级导航</a></li>
     {/if}
     {if condition="checkPath('contentCategory/categoryAdd')"}
-    <li><a href="{:Url('contentCategory/categoryAdd',['mark'=>input('mark')])}">添加分类</a></li>
+    <li><a href="{:Url('contentCategory/categoryAdd',['mark'=>input('mark')])}">添加二级导航</a></li>
     {/if}
 </ul>
  <div class="layui-form">
@@ -16,7 +16,7 @@
                  </div>
                  <div class="btn-group layui-form">
                      <select name="mark" class="form-control" lay-search>
-                         <option value="">全部标识</option>
+                         <option value="">一级导航</option>
                          {foreach $markList as $item}
                          <option value="{$item.mark}" {if input('mark') == $item.mark}selected{/if}>{$item.title}</option>
                          {/foreach}
@@ -33,8 +33,8 @@
             <thead>
             <tr>
                 <th width="15"><input type="checkbox"  lay-skin="primary" lay-filter="allChoose">
-                <th width="80">所属标识</th>
-                <th width="80">分类名称</th>
+                <th width="80">一级导航</th>
+                <th width="80">二级导航</th>
                 <th width="80">排序<span order="sort" class="order-sort"> </span></th>
                 <th width="80">操作</th>
             </tr>

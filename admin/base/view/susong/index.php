@@ -1,9 +1,9 @@
 <ul class="nav nav-tabs">
-    {if condition="checkPath('yaowen/index')"}
-    <li  class="active"><a href="{:Url('yaowen/index')}">信息列表</a></li>
+    {if condition="checkPath('susong/index')"}
+    <li  class="active"><a href="{:Url('susong/index')}">信息列表</a></li>
     {/if}
-    {if condition="checkPath('yaowen/contentAdd')"}
-    <li><a href="{:Url('yaowen/contentAdd')}">添加信息</a></li>
+    {if condition="checkPath('susong/contentAdd')"}
+    <li><a href="{:Url('susong/contentAdd')}">添加信息</a></li>
     {/if}
 </ul>
  <div class="layui-form">
@@ -18,7 +18,7 @@
                  </div>
                  <div class="btn-group layui-form">
                      <select name="cate_id" class="form-control" lay-search>
-                         <option value="">全部分类</option>
+                         <option value="">全部子菜单</option>
                          {foreach $cateList as $item}
                          <option value="{$item.id}" {if input('cate_id') == $item.id}selected{/if}>{$item.name}</option>
                          {/foreach}
@@ -31,14 +31,14 @@
              </div>
          </form>
      </div>
-     <span class="btn btn-success batch" data-msg="确定要删除选中信息吗" data-url="{:url('yaowen/batchDelContent')}">删除</span>
+     <span class="btn btn-success batch" data-msg="确定要删除选中信息吗" data-url="{:url('susong/batchDelContent')}">删除</span>
         <table class="table table-hover table-bordered table-list" id="menus-table">
             <thead>
             <tr>
                 <th width="15"><input type="checkbox"  lay-skin="primary" lay-filter="allChoose">
                 <th width="80">图片</th>
                 <th width="80">信息标题</th>
-                <th width="80">分类</th>
+                <th width="80">子菜单</th>
                 <th width="80">排序<span order="sort" class="order-sort"> </span></th>
                 <th width="50">推荐</th>
                 <th width="50">添加时间</th>
@@ -53,16 +53,16 @@
                     <td>{$v.title}</td>
                     <td>{$v.name}</td>
                     <td>
-                        {if condition="checkPath('yaowen/inputContent')"}
-                        <input class="form-control change-data short-input"  post-id="{$v.id}" post-url="{:url('yaowen/inputContent')}" data-name="sort" value="{$v.sort}">
+                        {if condition="checkPath('susong/inputContent')"}
+                        <input class="form-control change-data short-input"  post-id="{$v.id}" post-url="{:url('susong/inputContent')}" data-name="sort" value="{$v.sort}">
                         {else}
                         {$v.sort}
                         {/if}
                     </td>
 
                     <td>
-                        {if condition="checkPath('yaowen/contentIsgood',['id'=>$v.id])"}
-                        <input type="checkbox" data-name="is_good" data-url="{:url('yaowen/contentIsgood',['id'=>$v.id])}" lay-skin="switch" lay-text="是|否" {$v.is_good == 1 ?'checked':''} data-value="1|0">
+                        {if condition="checkPath('susong/contentIsgood',['id'=>$v.id])"}
+                        <input type="checkbox" data-name="is_good" data-url="{:url('susong/contentIsgood',['id'=>$v.id])}" lay-skin="switch" lay-text="是|否" {$v.is_good == 1 ?'checked':''} data-value="1|0">
                         {else}
                         {$v.is_good == 1?'<span class="blue">是</span>':'<span class="red">否</span>'}
                         {/if}
@@ -70,11 +70,11 @@
 
                     <td>{$v.sendtime}</td>
                     <td>
-                        {if condition="checkPath('yaowen/contentEdit',['id'=>$v['id']])"}
-                        <a  href="{:url('yaowen/contentEdit',['id'=>$v['id'],'cate_id'=>$v['cate_id'],'mark'=>input('mark')])}">编辑</a>
+                        {if condition="checkPath('susong/contentEdit',['id'=>$v['id']])"}
+                        <a  href="{:url('susong/contentEdit',['id'=>$v['id'],'cate_id'=>$v['cate_id'],'mark'=>input('mark')])}">编辑</a>
                         {/if}
-                        {if condition="checkPath('yaowen/contentDelete',['id'=>$v['id']])"}
-                            <a  class="span-post" post-msg="确定要删除吗" post-url="{:url('yaowen/contentDelete',['id'=>$v['id'],'mark'=>input('mark')])}">删除</a>
+                        {if condition="checkPath('susong/contentDelete',['id'=>$v['id']])"}
+                            <a  class="span-post" post-msg="确定要删除吗" post-url="{:url('susong/contentDelete',['id'=>$v['id'],'mark'=>input('mark')])}">删除</a>
                         {/if}
                     </td>
                 </tr>
